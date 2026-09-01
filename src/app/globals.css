@@ -1,0 +1,378 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.875rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 224 71% 7%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 224 71% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 224 45% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 224 45% 12%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 224 45% 15%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 224 45% 14%;
+    --input: 224 45% 14%;
+    --ring: 262 83% 58%;
+  }
+
+  /* ACCENT THEMES */
+  [data-accent="violet"] {
+    --primary: 262 83% 58%;
+    --ring: 262 83% 58%;
+  }
+
+  [data-accent="blue"] {
+    --primary: 217 91% 60%;
+    --ring: 217 91% 60%;
+  }
+
+  [data-accent="emerald"] {
+    --primary: 158 64% 52%;
+    --ring: 158 64% 52%;
+  }
+
+  [data-accent="amber"] {
+    --primary: 38 92% 50%;
+    --ring: 38 92% 50%;
+  }
+
+  [data-accent="rose"] {
+    --primary: 346 84% 61%;
+    --ring: 346 84% 61%;
+  }
+
+  [data-accent="cyan"] {
+    --primary: 188 94% 43%;
+    --ring: 188 94% 43%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    background-color: #f8fafc;
+    color: #0f172a;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.04) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.04) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(59, 130, 246, 0.03) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  .dark body {
+    background-color: #020617;
+    color: #f8fafc;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.08) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(59, 130, 246, 0.05) 0px, transparent 50%);
+  }
+}
+
+/* =========================================================================
+   LIGHT / WHITE THEME ADAPTATION LAYER
+   Transforms all dark-tailored utilities to crisp luxury white styling
+   ========================================================================= */
+
+html:not(.dark) {
+  /* Surfaces & Backgrounds */
+  .bg-slate-950,
+  .bg-slate-950\/80,
+  .bg-slate-950\/70,
+  .bg-slate-950\/75,
+  .bg-slate-950\/60,
+  .bg-slate-950\/40 {
+    background-color: #f8fafc !important;
+  }
+
+  .bg-slate-900,
+  .bg-slate-900\/95,
+  .bg-slate-900\/90,
+  .bg-slate-900\/80,
+  .bg-slate-900\/70,
+  .bg-slate-900\/60,
+  .bg-slate-900\/50,
+  .bg-slate-900\/40,
+  .bg-slate-900\/30 {
+    background-color: #ffffff !important;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05);
+  }
+
+  .bg-slate-800,
+  .bg-slate-800\/80,
+  .bg-slate-800\/60,
+  .bg-slate-800\/50,
+  .bg-slate-800\/40 {
+    background-color: #f1f5f9 !important;
+  }
+
+  /* Borders & Dividers */
+  .border-slate-800,
+  .border-slate-800\/90,
+  .border-slate-800\/80,
+  .border-slate-800\/70,
+  .border-slate-800\/60,
+  .border-slate-800\/40,
+  .border-slate-700,
+  .border-slate-700\/80,
+  .border-slate-700\/60 {
+    border-color: #e2e8f0 !important;
+  }
+
+  .divide-slate-800\/60 > * + *,
+  .divide-slate-800\/40 > * + * {
+    border-color: #e2e8f0 !important;
+  }
+
+  /* Text Colors & Contrast */
+  .text-white {
+    color: #0f172a !important;
+  }
+
+  .text-slate-100,
+  .text-slate-200 {
+    color: #1e293b !important;
+  }
+
+  .text-slate-300 {
+    color: #334155 !important;
+  }
+
+  .text-slate-400 {
+    color: #64748b !important;
+  }
+
+  .text-slate-500 {
+    color: #94a3b8 !important;
+  }
+
+  /* Hover States */
+  .hover\:bg-slate-800\/50:hover,
+  .hover\:bg-slate-800\/60:hover,
+  .hover\:bg-slate-800\/80:hover,
+  .hover\:bg-slate-800:hover,
+  .hover\:bg-slate-700:hover,
+  .hover\:bg-slate-900\/50:hover {
+    background-color: #f1f5f9 !important;
+  }
+
+  .hover\:border-slate-700:hover,
+  .hover\:border-slate-700\/80:hover {
+    border-color: #cbd5e1 !important;
+  }
+
+  /* Navigation: Sidebar & Header */
+  aside {
+    background-color: #ffffff !important;
+    border-right-color: #e2e8f0 !important;
+    box-shadow: 1px 0 3px 0 rgb(0 0 0 / 0.04);
+  }
+
+  header {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-bottom-color: #e2e8f0 !important;
+    backdrop-filter: blur(16px);
+  }
+
+  /* Form Elements */
+  input,
+  select,
+  textarea {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #94a3b8 !important;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
+  }
+
+  /* Modals & Dialogs */
+  .fixed.inset-0.bg-slate-950\/80 {
+    background-color: rgba(15, 23, 42, 0.45) !important;
+    backdrop-filter: blur(4px);
+  }
+
+  /* Cards & Glass panels */
+  .glass-card,
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  }
+
+  .glass-card:hover {
+    background: #ffffff !important;
+    border-color: #cbd5e1 !important;
+  }
+}
+
+/* Glassmorphism & UI Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.dark .glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.dark .glass-card {
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glow-indigo {
+  box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.25);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.25);
+}
+
+.glow-purple {
+  box-shadow: 0 0 25px -5px rgba(168, 85, 247, 0.25);
+}
+
+.gradient-border {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
+  border-radius: 1rem;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}
+
+/* Receipt & Invoice Print Styling */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-receipt, #printable-receipt *,
+  #printable-barcodes, #printable-barcodes *,
+  #printable-invoice, #printable-invoice * {
+    visibility: visible;
+  }
+  #printable-receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80mm;
+    margin: 0;
+    padding: 10px;
+    background: white;
+    color: black;
+    box-shadow: none;
+    border: none;
+  }
+  #printable-barcodes {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: white;
+    color: black;
+  }
+  #printable-invoice {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background: white;
+    color: black;
+    box-shadow: none;
+    border: none;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
