@@ -8,26 +8,31 @@ async function main() {
   console.log("🌱 Starting StockFlow realistic database seed...");
 
   // Clean existing data
-  await prisma.auditLog.deleteMany();
-  await prisma.expense.deleteMany();
-  await prisma.refundItem.deleteMany();
-  await prisma.refund.deleteMany();
-  await prisma.payment.deleteMany();
-  await prisma.saleItem.deleteMany();
-  await prisma.sale.deleteMany();
-  await prisma.purchaseOrderItem.deleteMany();
-  await prisma.purchaseOrder.deleteMany();
-  await prisma.inventoryMovement.deleteMany();
-  await prisma.inventory.deleteMany();
-  await prisma.product.deleteMany();
-  await prisma.customer.deleteMany();
-  await prisma.supplier.deleteMany();
-  await prisma.category.deleteMany();
-  await prisma.location.deleteMany();
-  await prisma.subscription.deleteMany();
-  await prisma.businessMember.deleteMany();
-  await prisma.business.deleteMany();
-  await prisma.user.deleteMany();
+  await prisma.stocktakeItem.deleteMany().catch(() => {});
+  await prisma.stocktake.deleteMany().catch(() => {});
+  await prisma.cashMovement.deleteMany().catch(() => {});
+  await prisma.registerShift.deleteMany().catch(() => {});
+  await prisma.discountCoupon.deleteMany().catch(() => {});
+  await prisma.auditLog.deleteMany().catch(() => {});
+  await prisma.expense.deleteMany().catch(() => {});
+  await prisma.refundItem.deleteMany().catch(() => {});
+  await prisma.refund.deleteMany().catch(() => {});
+  await prisma.payment.deleteMany().catch(() => {});
+  await prisma.saleItem.deleteMany().catch(() => {});
+  await prisma.sale.deleteMany().catch(() => {});
+  await prisma.purchaseOrderItem.deleteMany().catch(() => {});
+  await prisma.purchaseOrder.deleteMany().catch(() => {});
+  await prisma.inventoryMovement.deleteMany().catch(() => {});
+  await prisma.inventory.deleteMany().catch(() => {});
+  await prisma.product.deleteMany().catch(() => {});
+  await prisma.customer.deleteMany().catch(() => {});
+  await prisma.supplier.deleteMany().catch(() => {});
+  await prisma.category.deleteMany().catch(() => {});
+  await prisma.location.deleteMany().catch(() => {});
+  await prisma.subscription.deleteMany().catch(() => {});
+  await prisma.businessMember.deleteMany().catch(() => {});
+  await prisma.business.deleteMany().catch(() => {});
+  await prisma.user.deleteMany().catch(() => {});
 
   const passwordHash = await bcrypt.hash("password123", 10);
 
